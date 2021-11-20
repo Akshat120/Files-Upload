@@ -19,6 +19,29 @@
                     <input type="file" name="file" id="file">
                     <input type="submit" value="upload" class="btn btn-primary btn-block">
                 </form>
+                <hr>
+
+                <% if(files){ %>
+
+                    <% files.forEach(file => { %>
+                        
+                        <div class="card card-body mb-3">
+
+                            <% if(file.isImage){ %>
+
+                                <img src="image/<%= file.filename %>" alt="">
+                            
+                            <% } else { %>
+
+                                <%= file.filename %>
+                                
+                            <% } %>
+
+                        </div>
+                        
+                    <% }); %>
+
+                <% } %>
 
             </div>
         </div>
